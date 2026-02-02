@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  resources :user_books
+  resources :users
   resources :books do
     member do
       get :delete
     end
   end
 
-  root 'books#index'
+  root 'user_books#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
